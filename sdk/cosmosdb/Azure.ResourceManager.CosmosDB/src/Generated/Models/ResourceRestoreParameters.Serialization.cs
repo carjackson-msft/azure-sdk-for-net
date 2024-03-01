@@ -26,17 +26,17 @@ namespace Azure.ResourceManager.CosmosDB.Models
             }
 
             writer.WriteStartObject();
-            if (Optional.IsDefined(RestoreSource))
+            if (RestoreSource != null)
             {
                 writer.WritePropertyName("restoreSource"u8);
                 writer.WriteStringValue(RestoreSource);
             }
-            if (Optional.IsDefined(RestoreTimestampInUtc))
+            if (RestoreTimestampInUtc.HasValue)
             {
                 writer.WritePropertyName("restoreTimestampInUtc"u8);
                 writer.WriteStringValue(RestoreTimestampInUtc.Value, "O");
             }
-            if (Optional.IsDefined(RestoreWithTtlDisabled))
+            if (RestoreWithTtlDisabled.HasValue)
             {
                 writer.WritePropertyName("restoreWithTtlDisabled"u8);
                 writer.WriteBooleanValue(RestoreWithTtlDisabled.Value);
